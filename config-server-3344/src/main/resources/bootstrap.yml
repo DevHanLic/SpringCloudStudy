@@ -1,0 +1,27 @@
+server:
+  port: 3344
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+    register-with-eureka: false
+
+spring:
+  application:
+    name: config-server
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/qq1622975188/config-serve.git
+          username: 1622975188@qq.com
+          password:  Hlc1622975188
+          force-pull: true
+          search-paths: SpringCloudConfig
+      label: master
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true

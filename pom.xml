@@ -16,6 +16,8 @@
     <module>springcloud-study-euraka-7003</module>
     <module>springcloud-study-consumer-dept-feign</module>
     <module>springcloud-study-consumer-hystrix-dashboard</module>
+    <module>config-server-3344</module>
+    <module>config-client-3355</module>
   </modules>
   <packaging>pom</packaging>
 
