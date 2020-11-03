@@ -17,10 +17,12 @@ public class CongfigClientRest {
     private String eurekaServers;
     @Value("${server.port}")
     private String port;
+    @Value("${str}")
+    private String strValue;
 
   @RequestMapping("/config")
   public String getCongfig(){
-      String str ="applicationName"+ applicationName+"eurekaServers"+eurekaServers+"port"+port;
+      String str ="applicationName\n"+applicationName+"eurekaServers\n"+eurekaServers+"port\n"+port+"str\n"+strValue;
       System.out.println(str);
       return  str;
   }

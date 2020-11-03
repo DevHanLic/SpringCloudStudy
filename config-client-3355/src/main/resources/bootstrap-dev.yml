@@ -3,3 +3,5 @@ spring:
     config:
       profile: test
       label: master
+
+str: ${spring.application.name}

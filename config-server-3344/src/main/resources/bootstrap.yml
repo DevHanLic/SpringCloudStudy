@@ -4,7 +4,12 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
-    register-with-eureka: false
+#    register-with-eureka: false  #禁止自己当做服务注册
+#    fetch-registry: false       #屏蔽注册信息
+  instance:
+    instance-id: config-server3344
+    #访问路径显示IP地址
+    prefer-ip-address: true
 
 spring:
   application:

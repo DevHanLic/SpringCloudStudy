@@ -3,3 +3,5 @@ spring:
     config:
       profile: sit
       label: sit
+
+str: ${spring.application.name}

@@ -10,14 +10,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>config-server-3344</artifactId>
-
         <!-- config-server -->
         <dependencies>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-config-server</artifactId>
             </dependency>
-
 
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
