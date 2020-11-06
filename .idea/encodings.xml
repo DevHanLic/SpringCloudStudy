@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/config-client-3355/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/config-server-3344/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/config-server-3344/src/main/resources/config-server.keystore" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/springcloud-study-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-study-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-study-consumer-dept-80/src/main/java" charset="UTF-8" />

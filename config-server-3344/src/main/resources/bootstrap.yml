@@ -24,9 +24,16 @@ spring:
           password:  Hlc1622975188
           force-pull: true
           search-paths: SpringCloudConfig
-      label: master
+
   http:
     encoding:
       charset: UTF-8
       enabled: true
       force: true
+
+encrypt:
+  key-store:
+    location: classpath:config-server.keystore
+    alias: config-server
+    password: 123456
+    secret: 123456

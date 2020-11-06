@@ -17,7 +17,7 @@ public class CongfigClientRest {
     private String eurekaServers;
     @Value("${server.port}")
     private String port;
-    @Value("${str}")
+    @Value("${spring.datasource.password}")
     private String strValue;
 
   @RequestMapping("/config")

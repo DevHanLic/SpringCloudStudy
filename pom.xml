@@ -19,6 +19,8 @@
     <module>config-server-3344</module>
     <module>config-client-3355</module>
   </modules>
+
+
   <packaging>pom</packaging>
 
   <name>spring-cloud-study Maven Webapp</name>
