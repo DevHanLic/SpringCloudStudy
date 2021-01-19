@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.springcloud.mapper.DeptMapper">
 
-    <select id="findById" resultType="DeptEntity" parameterType="Long">
+    <select id="findById" resultType="com.springcloud.entity.DeptEntity" parameterType="Long">
        SELECT * FROM  dept WHERE  dept_no = #{deptNo}
     </select>
 
-    <select id="findAll" resultType="DeptEntity">
+    <select id="findAll" resultType="com.springcloud.entity.DeptEntity">
       SELECT dept_no as deptNo, db_source as dbSource  ,dept_name as deptName  FROM  dept;
     </select>
 

@@ -1,13 +1,16 @@
 package com.springcloud.service.Impl;
 
 import com.springcloud.mapper.DeptMapper;
-import com.springcloud.entities.DeptEntity;
+import com.springcloud.entity.DeptEntity;
 import com.springcloud.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * @author HLC
+ */
 @Service
 public class DeptServiceImpl  implements DeptService {
 

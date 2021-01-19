@@ -1,8 +1,13 @@
-package com.springcloud.Controller;
+package com.springcloud.controller;
 
-import com.springcloud.entities.DeptEntity;
+import com.springcloud.entity.DeptEntity;
 import com.springcloud.service.DeptClientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.stream.annotation.EnableBinding;
+import org.springframework.cloud.stream.annotation.StreamListener;
+import org.springframework.cloud.stream.messaging.Sink;
+import org.springframework.messaging.Message;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,4 +38,14 @@ public class DeptConsumerController {
         return deptClientService.findAll();
     }
 
+    @EnableBinding(Sink.class)
+    @Service
+    public class LianxiCuseromer {
+
+        @StreamListener(Sink.INPUT)
+        public void test(Message<String> message) {
+            String payload = message.getPayload();
+            System.out.println(payload);
+        }
+    }
 }

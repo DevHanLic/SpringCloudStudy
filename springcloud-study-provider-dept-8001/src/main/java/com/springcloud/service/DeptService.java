@@ -1,9 +1,12 @@
 package com.springcloud.service;
 
-import com.springcloud.entities.DeptEntity;
+import com.springcloud.entity.DeptEntity;
 
 import java.util.List;
 
+/**
+ * @author HLC
+ */
 public interface DeptService {
     /**
      * 插入

@@ -1,4 +1,7 @@
 spring:
   application:
     name: config-server-client
+#配置服务器信息
+server:
+  port: 3355
 

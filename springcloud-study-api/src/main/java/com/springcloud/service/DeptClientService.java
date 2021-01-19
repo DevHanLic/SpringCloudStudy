@@ -4,7 +4,7 @@ package com.springcloud.service;
 //Feign的面向接口编程
 //@FeignClient(value = "STUDY-SPRINGCLOUD-DEPT")
 
-import com.springcloud.entities.DeptEntity;
+import com.springcloud.entity.DeptEntity;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

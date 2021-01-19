@@ -1,11 +1,14 @@
 package com.springcloud.mapper;
 
-import com.springcloud.entities.DeptEntity;
+import com.springcloud.entity.DeptEntity;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * @author HLC
+ */
 @Mapper
 @Repository
 public interface DeptMapper {

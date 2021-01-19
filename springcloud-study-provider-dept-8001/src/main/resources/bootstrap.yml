@@ -1,0 +1,82 @@
+#数据库信息配置
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/study01?useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+    username: root
+    password: '***'
+    # Mysql8.0请改为com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  cloud:
+    config:
+      uri: http://localhost:3344
+      profile: test
+      label: master
+      discovery:
+        enabled: true
+        service-id: config-server
+
+    stream:
+      binders: # 在此处配置要绑定的rabbitmq的服务信息；
+        defaultRabbit: # 表示定义的名称，用于于binding整合
+          type: rabbit # 消息组件类型
+          environment: # 设置rabbitmq的相关的环境配置
+            spring:
+              rabbitmq:
+                host: 192.168.184.128
+                port: 5672
+                username: guest
+                password: '***'
+                virtual-host: /
+      bindings: # 服务的整合处理
+        output: # 这个名字是一个通道的名称，在分析具体源代码的时候会进行说明
+          destination: studyExchange # 表示要使用的Exchange名称定义
+          content-type: application/json # 设置消息类型，本次为对象json，如果是文本则设置“text/plain”
+          binder: defaultRabbit # 设置要绑定的消息服务的具体设置
+
+    #druid连接池配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    # 配置监控统计拦截的filters,去掉监控界面sql无法统计，‘wall’用于防火墙
+    filters: stat,wall,log4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    userGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+  application:
+    name: provider-dept
+
+#客户端注册进eureka服务列表
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+  #服务实例名称修改
+  instance:
+    instance-id: study-springcloud-dept8001
+    #访问路径显示IP地址
+    prefer-ip-address: true
+
+#Mybatis配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.springcloud.entities
+  configuration:
+    cache-enabled: true #开启二级缓存
+    map-underscore-to-camel-case: true #开启驼峰命名
+
+
+info:
+  app.name: study-springcloud-micoservices
+  company.name: www.gxs.com
+  build.artifactId: @project.artifactId@
+  build.version: @project.version@

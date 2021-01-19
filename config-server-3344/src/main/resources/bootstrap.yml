@@ -23,7 +23,7 @@ spring:
           username: 1622975188@qq.com
           password:  Hlc1622975188
           force-pull: true
-          search-paths: SpringCloudConfig
+          search-paths: SpringCloudConfig,demo
 
   http:
     encoding:

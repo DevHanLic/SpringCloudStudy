@@ -19,11 +19,15 @@ public class CongfigClientRest {
     private String port;
     @Value("${spring.datasource.password}")
     private String strValue;
-
+    @Value("${mybatis.mapper-locations}")
+    private String strValue1;
+    @Value("${spring.cloud.stream.binders.defaultRabbit.environment.spring.rabbitmq.password}")
+    private String Password;
   @RequestMapping("/config")
   public String getCongfig(){
-      String str ="applicationName\n"+applicationName+"eurekaServers\n"+eurekaServers+"port\n"+port+"str\n"+strValue;
+      String str ="applicationName\n"+applicationName+"eurekaServers\n"+eurekaServers+"port\n"+port+"str\n"+strValue+strValue1;
       System.out.println(str);
+      System.out.println(Password);
       return  str;
   }
 }
